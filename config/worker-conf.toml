@@ -1,0 +1,24 @@
+[ethereum]
+url = ""
+
+[blobstore]
+s3_region = "us-east-2"
+s3_bucket = "test-distributed-query"
+s3_timeout_seconds = 6000
+
+[params_blobstore]
+s3_region = "us-east-2"
+s3_bucket = "distributed-query-public-params"
+s3_timeout_seconds = 6000
+
+[worker]
+domain = "sc"
+data_dir = "/tmp"
+gateway_url = "ws://gateway.test.distributed-query.io:80"
+version = "develop"
+secret = "somethingverysecret"
+issuer = "somecompany"
+worker_id = "jean-mi/chel"
+
+[prometheus]
+port = 9000

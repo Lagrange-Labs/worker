@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  worker:
+    image: lagrangelabs/worker:develop
+    container_name: worker
+    environment:
+    - ETHEREUM__URL=${ETHEREUM__URL}
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./config:/config
+    restart: always
+    pull_policy: always
+    command: ["worker", "run", "--config", "/config/worker-conf.toml"]
