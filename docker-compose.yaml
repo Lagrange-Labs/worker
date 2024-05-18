@@ -6,10 +6,12 @@ services:
     container_name: worker
     environment:
     - ETHEREUM__URL=${ETHEREUM__URL}
+    - AVS__KEYSTORE_PATH=${AVS__KEYSTORE_PATH}
+    - AVS__KEYSTORE_PASSWORD=${AVS__KEYSTORE_PASSWORD}
     ports:
-      - "9000:9000"
+      - "9090:9090"
     volumes:
       - ./config:/config
     restart: always
     pull_policy: always
-    command: ["worker", "run", "--config", "/config/worker-conf.toml"]
+    command: ["worker", "--config", "/config/worker-conf.toml"]
