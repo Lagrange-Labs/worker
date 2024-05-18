@@ -4,7 +4,9 @@ An AVS operator is expected to serve proving requests from Lagrange network by r
 
 This is a step by step guide to deploy your own worker
 
-### Pre-Requirement
+![Worker](Lagrange.png)
+
+### Pre-Requirements
 
 There are **3** different types of workers. Every type can generate a specific type of proof.
 
