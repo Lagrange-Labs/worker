@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   worker:
-    image: lagrangelabs/worker:develop
+    image: lagrangelabs/worker:latest
     container_name: worker
     environment:
     - ETHEREUM__URL=${ETHEREUM__URL}
