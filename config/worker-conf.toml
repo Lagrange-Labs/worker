@@ -1,24 +1,27 @@
-[ethereum]
-url = ""
-
-[blobstore]
-s3_region = "us-east-2"
-s3_bucket = "test-distributed-query"
-s3_timeout_seconds = 6000
-
-[params_blobstore]
-s3_region = "us-east-2"
-s3_bucket = "distributed-query-public-params"
-s3_timeout_seconds = 6000
-
 [worker]
-domain = "sc"
 data_dir = "/tmp"
-gateway_url = "ws://gateway.test.distributed-query.io:80"
 version = "develop"
-secret = "somethingverysecret"
-issuer = "somecompany"
-worker_id = "jean-mi/chel"
+instance_type = "medium"
+
+[avs]
+gateway_url = "ws://gateway.test-distributed-query.test.distributed-query.io:80"
+issuer = "lagrange"
+worker_id = "64920"
+
+[public_params]
+dir = "/zkmr_params"
+url = "https://distributed-query-public-params.s3.us-east-2.amazonaws.com"
+
+[public_params.preprocessing_params]
+file = "STORAGE_PREPROCESS/PUBLIC_PARAMS"
+
+[public_params.query2_params]
+file = "STORAGE_QUERY2/public_params"
+
+[public_params.groth16_assets]
+circuit_file = "STORAGE_QUERY2/groth16_assets/circuit.bin"
+r1cs_file = "STORAGE_QUERY2/groth16_assets/r1cs.bin"
+pk_file = "STORAGE_QUERY2/groth16_assets/pk.bin"
 
 [prometheus]
 port = 9000

@@ -5,13 +5,21 @@ services:
     image: lagrangelabs/worker:latest
     container_name: worker
     environment:
-    - ETHEREUM__URL=${ETHEREUM__URL}
-    - AVS__KEYSTORE_PATH=${AVS__KEYSTORE_PATH}
-    - AVS__KEYSTORE_PASSWORD=${AVS__KEYSTORE_PASSWORD}
+    #################################################
+    #Initial env vars to be removed after first setup
+    - RPC__URL=${RPC_URL}
+    - AVS__ETH_PWD=${AVS__ETH_PWD}
+    - AVS__ETH_KEYSTORE="/config/priv_key.json"
+    ###################################################
+    - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
+    - AVS__LAGR_PWD=${AVS__LAGR_PWD}
+    - RUST_LOG=info,worker=debug
+    - PUBLIC_PARAMS__SKIP_STORE=false
     ports:
       - "9090:9090"
     volumes:
       - ./config:/config
+      - ./zkmr_params:/zkmr_params
     restart: always
     pull_policy: always
     command: ["worker", "--config", "/config/worker-conf.toml"]
