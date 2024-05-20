@@ -6,8 +6,9 @@ services:
     container_name: worker
     environment:
     ###################################
-    #Remove this after setup############
-    - RPC_URL=${RPC_URL}
+    #Setup variables###################
+    # You can find the list of the public RPCs for holesky here https://chainlist.org/chain/17000
+    - RPC_URL=https://ethereum-holesky-rpc.publicnode.com
     - AVS__ETH_PWD=${AVS__ETH_PWD}
     - AVS__ETH_KEYSTORE=/config/priv_key.json
     - NETWORK=holesky
