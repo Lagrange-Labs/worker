@@ -12,11 +12,11 @@ This is a step by step guide to deploy your own worker.
 There are **3** different types of workers. Every type can generate a specific type of proof.
 You can choose your infrastrcture depending on the type of proof you would like to be able to generate.
 
-| Worker Type | CPU | Memory | Disk | Internet |
-| --- | --- | --- | --- | --- |
-| `worker-sc` | 20 | 40 GB | 60GB | ✅ |
-| `worker-sp` | 40 | 80 GB | 60GB | ✅ |
-| `worker-sg` | 90 | 180 GB | 60GB | ✅ |
+| Worker Type | CPU | Memory | Disk | Internet | Proposed Hetzner instance|
+| --- | --- | --- | --- | --- | --- |
+| `worker-sc` | 20 | 40 GB | 60GB | ✅ | AX-52|
+| `worker-sp` | 40 | 80 GB | 60GB | ✅ | AX-52
+| `worker-sg` | 90 | 180 GB | 60GB | ✅ |AX-102|
 
 ### Setup Steps
 
