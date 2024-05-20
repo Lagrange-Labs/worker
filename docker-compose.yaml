@@ -9,7 +9,7 @@ services:
     #Remove this after setup############
     - RPC_URL=${RPC_URL}
     - AVS__ETH_PWD=${AVS__ETH_PWD}
-    - AVS__ETH_KEYSTORE="/config/priv_key.json"
+    - AVS__ETH_KEYSTORE=/config/priv_key.json
     - NETWORK=holesky
     ###################################
     - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json

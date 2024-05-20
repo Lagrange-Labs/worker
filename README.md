@@ -22,7 +22,8 @@ You can choose your infrastrcture depending on the type of proof you would like 
 
 1. Install `Docker` by following this [guide](https://docs.docker.com/engine/install/)
 2. Fill the .env file with the right secrets
-3. Generate a Lagrange key
+3. Add the Ethereum private key under `config/priv_key.json`
+4. Generate a Lagrange key
 ```sh
 #Generate the key
 docker compose run --rm worker avs new-key
