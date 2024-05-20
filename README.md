@@ -18,12 +18,30 @@ You can choose your infrastrcture depending on the type of proof you would like 
 | `worker-sp` | 40 | 80 GB | 60GB | ✅ |
 | `worker-sg` | 90 | 180 GB | 60GB | ✅ |
 
-### Deployment Steps
+### Setup Steps
 
 1. Install `Docker` by following this [guide](https://docs.docker.com/engine/install/)
-2. 
-3. Run the worker
+2. Fill the .env file with the right secrets
+3. Generate a Lagrange key
 ```sh
-ETHEREUM__URL=https://eth*************
-docker compose up -e ETHEREUM__URL -d
+#Generate the key
+docker compose run --rm worker avs new-key
+```
+You should see something like this
+```sh
+Input password for Lagrange key:
+new Lagrange keystore stored under config/lagr_keystore.json
+	public_key = "66779122cb188d1e70889278ffb3ee8ee024d4a23742a59afbdaaa096fc5135c3a14d897de87d1c56adbe029619c231416e7dfb3f1de0a542dd8ac7f4748ce07"
+```
+Register the Lagrange key on-chain by signing it with the AVS operator key
+```sh
+docker compose run --rm worker avs register
+```
+
+You are now registered, you can go ahead and remove the initial env vars from `docker-compose.yaml` and from `.env`
+
+
+1. Run the worker
+```sh
+docker compose up -d
 ```
