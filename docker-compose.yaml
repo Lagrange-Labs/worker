@@ -5,12 +5,12 @@ services:
     image: lagrangelabs/worker:latest
     container_name: worker
     environment:
-    #################################################
-    #Initial env vars to be removed after first setup
+    ###################################
+    #Remove this after setp############
     - RPC__URL=${RPC_URL}
     - AVS__ETH_PWD=${AVS__ETH_PWD}
     - AVS__ETH_KEYSTORE="/config/priv_key.json"
-    ###################################################
+    ###################################
     - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
     - AVS__LAGR_PWD=${AVS__LAGR_PWD}
     - RUST_LOG=info,worker=debug
