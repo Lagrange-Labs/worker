@@ -7,6 +7,10 @@ An AVS operator is expected to serve proving requests from Lagrange network by r
 
 This is a step by step guide to deploy your own worker.
 
+---
+If you prefer video content you can watch this [video tutorial](https://www.youtube.com/watch?v=zRY7AwrJo4w)
+
+---
 ### Pre-Requirements
 
 There are **3** different types of workers. Every type can generate a specific type of proof.
@@ -50,3 +54,5 @@ docker compose run --rm worker avs register
 ```sh
 docker compose up -d
 ```
+
+
