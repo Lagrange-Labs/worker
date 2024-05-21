@@ -6,6 +6,7 @@ instance_type = "medium"
 [avs]
 gateway_url = "ws://gateway.test-distributed-query.test.distributed-query.io:80"
 issuer = "lagrange"
+#Change this value in case you run multiple workers (same operator)
 worker_id = "64920"
 
 [public_params]
