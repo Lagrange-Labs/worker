@@ -45,7 +45,12 @@ new Lagrange keystore stored under config/lagr_keystore.json
 ```sh
 docker compose run --rm worker avs register
 ```
-1. You are now registered, you can go ahead and remove the keystore from  `config/priv_key.json`
+6. You are now registered, you can go ahead and remove the keystore from  `config/priv_key.json`
+7. Add the Lagrange password to the `.env` file so that the service can be restarted without any manual intervention.
+```sh
+# set the AVS__LAGR_PWD key with the password you have set
+vim .env
+```
 
 ### Run the worker Steps
 
