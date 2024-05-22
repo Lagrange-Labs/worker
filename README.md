@@ -15,11 +15,11 @@ If you prefer video content you can watch this [video tutorial](https://www.yout
 There are **3** different types of workers. Every type can generate a specific type of proof.
 You can choose your infrastrcture depending on the type of proof you would like to be able to generate.
 
-| Worker Type | Cores (Dedicated) | vCPU (Cloud)| Memory | Disk | Internet | Proposed Hetzner instance|
-| --- | --- | --- | --- | --- | --- |
-| `small` | 8 | 20 | 40 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/) |
-| `medium` | 8 | 40 | 80 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/) |
-| `large` | 16 | 90 | 180 GB | 60GB | ✅ | [AX-102](https://www.hetzner.com/dedicated-rootserver/ax102/) |
+| Worker Type | Cores (Dedicated) | vCPU (Cloud) | Memory | Disk | Internet | Proposed Hetzner instance|
+| --- | --- | --- | --- | --- | --- | --- |
+| `small` | 8 | 20 | 40 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/)|
+| `medium` | 8 | 40 | 80 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/)|
+| `large` | 16 | 90 | 180 GB | 60GB | ✅ | [AX-102](https://www.hetzner.com/dedicated-rootserver/ax102/)|
 
 ### Setup Steps
 
