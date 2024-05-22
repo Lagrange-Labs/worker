@@ -2,7 +2,6 @@
 
 An AVS operator is expected to serve proving requests from Lagrange network by running a `Worker` binary. The Lagrange sequence sends through the `Gateway` tasks to workers containing all the necessary inputs to generate zkproofs. The worker continuously listens for such tasks and generate proofs accordingly.
 
-
 ![Worker](Lagrange.png)
 
 This is a step by step guide to deploy your own worker.
@@ -16,11 +15,11 @@ If you prefer video content you can watch this [video tutorial](https://www.yout
 There are **3** different types of workers. Every type can generate a specific type of proof.
 You can choose your infrastrcture depending on the type of proof you would like to be able to generate.
 
-| Worker Type | CPU | Memory | Disk | Internet | Proposed Hetzner instance|
+| Worker Type | Cores (Dedicated) | vCPU (Cloud)| Memory | Disk | Internet | Proposed Hetzner instance|
 | --- | --- | --- | --- | --- | --- |
-| `worker-sc` | 20 | 40 GB | 60GB | ✅ | AX-52|
-| `worker-sp` | 40 | 80 GB | 60GB | ✅ | AX-52
-| `worker-sg` | 90 | 180 GB | 60GB | ✅ |AX-102|
+| `small` | 8 | 20 | 40 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/)|
+| `medium` | 8 | 40 | 80 GB | 60GB | ✅ | [AX-52](https://www.hetzner.com/dedicated-rootserver/ax52/)
+| `large` | 16 | 90 | 180 GB | 60GB | ✅ | [AX-102](https://www.hetzner.com/dedicated-rootserver/ax102/)|
 
 ### Setup Steps
 
@@ -54,5 +53,3 @@ docker compose run --rm worker avs register
 ```sh
 docker compose up -d
 ```
-
-
