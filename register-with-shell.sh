@@ -60,8 +60,9 @@ fi
 # --- Script Logic ---
 # The lagrange key should only be used for this AVS.
 # It is an ECDSA secp256k1 keypair; the same as ethereum
-LAGR_KEY=$(openssl ecparam -name secp256k1 -genkey -noout | openssl ec -text -noout)
-LAGR_PUB_KEY=$(echo $LAGR_KEY | grep pub -A 5 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^04//')
+LAGR_KEYPAIR=$(openssl ecparam -name secp256k1 -genkey -noout | openssl ec -text -noout)
+LAGR_KEY=0x$(echo $LAGR_KEYPAIR | grep priv -A 3 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^00//')
+LAGR_PUB_KEY=$(echo $LAGR_KEYPAIR | grep pub -A 5 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^04//')
 
 # 32 bytes of X coordinate of ECDSA secp256k1 public key
 pubkeyX=0x${LAGR_PUB_KEY:0:64}
@@ -102,6 +103,7 @@ cast send $ZKMR_STAKE_REGISTRY_ADDR \
     "(${signature},${salt},${expiry_timestamp})" \
     # === MODIFY ME ! ===
     --private-key $ETH_KEY # Specify a signer here as you see fit
+    # --aws, --ledger, --trezor, etc.
 
 printf "\nSuccessfully Registered!"
 
