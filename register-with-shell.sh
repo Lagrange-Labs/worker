@@ -113,10 +113,11 @@ calculate_registration_hash() {
     printf "\nRegistration hash:\n${HASH}\n"
 }
 
+# === MODIFY ME ! ===
 # Sign the registration hash with your ETH_KEY
 sign_registration_hash() {
-    SIGNATURE=$(cast wallet sign --private-key $ETH_KEY $hash)
-    printf "\nRegistration signature:\n${SIGNATURE}"
+    SIGNATURE=$(cast wallet sign --private-key $ETH_KEY $HASH)
+    printf "\nRegistration signature:\n${SIGNATURE}\n"
 }
 
 # === MODIFY ME ! ===
