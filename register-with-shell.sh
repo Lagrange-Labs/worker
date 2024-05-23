@@ -66,7 +66,7 @@ store_lagrange_key() {
 
 # Determine contract addresses based on the chain ID
 set_contract_addresses() {
-    local chain_id = $(cast chain-id)
+    local chain_id=$(cast chain-id)
 
     if [ -z "$chain_id" ]; then
         echo "Error: Unable to fetch chain ID."
@@ -129,6 +129,7 @@ register_operator() {
         # === MODIFY ME ! ===
         --private-key $ETH_KEY # This line can be adjusted for other signers
         # --aws, --ledger, --trezor, etc.
+
 
     printf "\nSuccessfully Registered!\n"
 }
