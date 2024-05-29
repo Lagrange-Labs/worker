@@ -4,15 +4,15 @@
 # This is an alternative to our Rust CLI. You can modify it to suit your operational setup.
 # This script does 3 things:
 #   1. Generate a new LAGR_KEY to be used to authenticate with the Gateway + sign the proofs you generate. It is needed at runtime while running the worker
-#   2. Sign a message with your Eigenlayer ETH_KEY. This is your very sensitive `withdrawal key` https://docs.eigenlayer.xyz/eigenlayer/operator-guides/key-management/intro#withdrawal-keys
+#   2. Sign a message with your Eigenlayer Operator Key a.k.a `OPERATOR_KEY`. This is your very sensitive key only to be used to register, deregister, and rotate your `LAGR_KEY`. See Eigenlayer docs for more info about Operator Keys  https://docs.eigenlayer.xyz/eigenlayer/operator-guides/key-management/intro#operator-keys
 #   3. Send a transaction to the ZKMRStakeRegistry to register for the ZK Coprocessor AVS
 # The transaction requires as input:
 #   1. The public key component of your new LAGR_KEY
-#   2. A signed message from your ETH_KEY
-#   3. It must be signed with your ETH_KEY i.e. `cast send --private-key $ETH_KEY`
+#   2. A signed message from your OPERATOR_KEY
+#   3. It must be signed with your OPERATOR_KEY i.e. `cast send --private-key $OPERATOR_KEY`
 #
-# You need to change the "MODIFY ME!" section to load your ETH_KEY safely.
-# You don't need to load the ETH_KEY into the environment at all if you use a remote signer.
+# You need to change the "MODIFY ME!" sections to load your OPERATOR_KEY safely.
+# You don't need to load the OPERATOR_KEY into the environment at all if you use a remote signer.
 # You should just modify the `cast send` command at the end of the script to sign the tx in a way that meets your security needs.
 # You also need to update the OPERATOR_ADDR variable to match your address.
 
@@ -26,7 +26,7 @@
 # --- Secrets ---
 # This is just an example. You can generate/acquire/inject your operator key however you'd like
 OPERATOR_KEY_ADDR_TUPLE=$(cast wallet new --json)
-ETH_KEY=$(echo $OPERATOR_KEY_ADDR_TUPLE | jq -r ".[0].private_key")
+OPERATOR_KEY=$(echo $OPERATOR_KEY_ADDR_TUPLE | jq -r ".[0].private_key")
 OPERATOR_ADDR=$(echo $OPERATOR_KEY_ADDR_TUPLE | jq -r ".[0].address")
 
 # --- Constants ---
@@ -114,9 +114,9 @@ calculate_registration_hash() {
 }
 
 # === MODIFY ME ! ===
-# Sign the registration hash with your ETH_KEY
+# Sign the registration hash with your OPERATOR_KEY
 sign_registration_hash() {
-    SIGNATURE=$(cast wallet sign --private-key $ETH_KEY $HASH)
+    SIGNATURE=$(cast wallet sign --private-key $OPERATOR_KEY $HASH)
     printf "\nRegistration signature:\n${SIGNATURE}\n"
 }
 
@@ -127,10 +127,8 @@ register_operator() {
         "registerOperator((uint256,uint256),(bytes,bytes32,uint256))" \
         "(${PUBKEY_X},${PUBKEY_Y})" \
         "(${SIGNATURE},${SALT},${EXPIRY_TIMESTAMP})" \
-        # === MODIFY ME ! ===
-        --private-key $ETH_KEY # This line can be adjusted for other signers
+        --private-key $OPERATOR_KEY # === MODIFY ME ! === This line can be adjusted for other signers
         # --aws, --ledger, --trezor, etc.
-
 
     printf "\nSuccessfully Registered!\n"
 }
