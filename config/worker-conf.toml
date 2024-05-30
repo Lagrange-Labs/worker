@@ -1,12 +1,11 @@
 [worker]
 data_dir = "/tmp"
-version = "develop"
 instance_type = "medium"
 
 [avs]
 gateway_url = "ws://gateway.test-distributed-query.test.distributed-query.io:80"
 issuer = "lagrange"
-#This is a display name for your worker. 
+#This is a display name for your worker. please change it.
 worker_id = "kais-demo"
 
 [public_params]
