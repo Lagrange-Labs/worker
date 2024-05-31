@@ -9,7 +9,8 @@ services:
     - RPC_URL=https://ethereum-holesky-rpc.publicnode.com
     - AVS__ETH_PWD=${AVS__ETH_PWD}
     - AVS__ETH_KEYSTORE=/config/priv_key.json
-    - NETWORK=holesky
+    # set Network to holesky for testnet
+    - NETWORK=mainnet
     ###################################
     - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
     - AVS__LAGR_PWD=${AVS__LAGR_PWD}
