@@ -80,7 +80,9 @@ set_contract_addresses() {
         ZKMR_STAKE_REGISTRY_ADDR=0xf724cDC7C40fd6B59590C624E8F0E5E3843b4BE4
         EIGEN_AVS_DIRECTORY_ADDR=0x055733000064333CaDDbC92763c58BF0192fFeBf
     elif [ "$chain_id" -eq "$MAINNET_CHAINID" ]; then
-        echo "Mainnet is not live yet"
+        ZKMR_SERVICE_MANAGER_ADDR=0x22CAc0e6A1465F043428e8AeF737b3cb09D0eEDa
+        ZKMR_STAKE_REGISTRY_ADDR=0x8dcdCc50Cc00Fe898b037bF61cCf3bf9ba46f15C
+        EIGEN_AVS_DIRECTORY_ADDR=0x135dda560e946695d6f155dacafc6f1f25c1f5af
         exit 1
     else
         echo "Unknown chain ID: $chain_id"
