@@ -3,10 +3,13 @@ data_dir = "/tmp"
 instance_type = "medium"
 
 [avs]
-gateway_url = "ws://gateway.test-distributed-query.test.distributed-query.io:80"
+# for testnet, use:
+# gateway_url = "ws://gateway.test-distributed-query.test.distributed-query.io:80"
+# for mainnet, use:
+gateway_url = "ws://gateway.prod-distributed-query.prod.distributed-query.io:80"
 issuer = "lagrange"
 #This is a display name for your worker. please change it.
-worker_id = "kais-demo"
+worker_id = "generic-worker"
 
 [public_params]
 dir = "/zkmr_params"
