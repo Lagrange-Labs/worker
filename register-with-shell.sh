@@ -35,7 +35,7 @@ MAINNET_CHAINID=1
 
 # --- Configuration ---
 SIG_EXPIRY_SECONDS=300
-export ETH_RPC_URL=https://rpc.holesky.ethpandaops.io
+export ETH_RPC_URL=https://eth.llamarpc.com
 
 # --- Functions ---
 
