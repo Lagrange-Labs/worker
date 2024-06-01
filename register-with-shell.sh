@@ -35,7 +35,12 @@ MAINNET_CHAINID=1
 
 # --- Configuration ---
 SIG_EXPIRY_SECONDS=300
-export ETH_RPC_URL=https://eth.llamarpc.com
+ if [ "$chain_id" -eq "$HOLESKY_CHAINID" ]; then
+    export ETH_RPC_URL=https://rpc.holesky.ethpandaops.io
+elif [ "$chain_id" -eq "$MAINNET_CHAINID" ]; then
+    export ETH_RPC_URL=https://eth.llamarpc.com
+fi
+printf "\Using RPC url: ${ETH_RPC_URL}\n"
 
 # --- Functions ---
 
