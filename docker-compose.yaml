@@ -1,6 +1,7 @@
 services:
   worker:
-    image: lagrangelabs/worker:latest
+    #image: lagrangelabs/worker:holesky
+    image: lagrangelabs/worker:mainnet
     container_name: worker
     environment:
     ###################################
