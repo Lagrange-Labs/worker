@@ -29,6 +29,7 @@ You can choose your infrastrcture depending on the type of proof you would like 
 git clone https://github.com/Lagrange-Labs/worker.git
 cd worker
 ```
+**Note**: If you want to build from source check `Build_from_source.md` file in this repo, then come back to this step once done with that
 3. Generate a Lagrange key
 ```sh
 #Generate the key
