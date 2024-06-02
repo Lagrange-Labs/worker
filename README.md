@@ -30,7 +30,8 @@ git clone https://github.com/Lagrange-Labs/worker.git
 cd worker
 ```
 ---
-**Note**: If you want to build from source check `Build_from_source.md` file in [this repo](https://github.com/Lagrange-Labs/worker), then come back to this step once done with that
+##### **Note**: 
+If you want to build from source check `Build_from_source.md` file in [this repo](https://github.com/Lagrange-Labs/worker), then come back to this step once done with that
 
 ---
 
