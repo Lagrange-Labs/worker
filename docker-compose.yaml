@@ -1,7 +1,7 @@
 services:
   worker:
     #image: lagrangelabs/worker:holesky
-    image: lagrangelabs/worker:mainnet
+    image: lagrangelabs/worker:${NETWORK}
     container_name: worker
     environment:
     ###################################
@@ -10,8 +10,7 @@ services:
     - RPC_URL=https://eth.llamarpc.com
     - AVS__ETH_PWD=${AVS__ETH_PWD}
     - AVS__ETH_KEYSTORE=/config/priv_key.json
-    # set Network to holesky for testnet
-    - NETWORK=mainnet
+    - NETWORK=${NETWORK}
     ###################################
     - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
     - AVS__LAGR_PWD=${AVS__LAGR_PWD}
@@ -25,3 +24,10 @@ services:
     restart: always
     pull_policy: always
     command: ["worker", "--config", "/config/worker-conf.toml"]
+#fetch new docker every minute
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 lagrangelabs/worker:${NETWORK}
