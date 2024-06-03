@@ -27,4 +27,4 @@ r1cs_file = "STORAGE_QUERY2/groth16_assets/r1cs.bin"
 pk_file = "STORAGE_QUERY2/groth16_assets/pk.bin"
 
 [prometheus]
-port = 9000
+port = 9090
