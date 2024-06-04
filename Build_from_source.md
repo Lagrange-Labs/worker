@@ -1,7 +1,7 @@
 # Build from source
 ### Setup Steps
 
-1. On another directory on this machine clone the lgn-copreocessor repo
+1. On another directory on this machine clone the lgn-coprocessor repo
 ```sh
 cd $HOME
 git clone https://github.com/Lagrange-Labs/lgn-coprocessor.git
