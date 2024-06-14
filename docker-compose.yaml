@@ -21,6 +21,7 @@ services:
     volumes:
       - ./config:/config
       - ./zkmr_params:/zkmr_params
+      - ./verify_checksum.sh:/verify_checksum.sh
     restart: always
     pull_policy: always
     command: ["worker", "--config", "/config/worker-conf.toml"]
