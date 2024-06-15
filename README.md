@@ -1,6 +1,6 @@
 # Deploy a Worker
 
-An AVS operator is expected to serve proving requests from Lagrange network by running a `Worker` binary. The Lagrange sequence sends through the `Gateway` tasks to workers containing all the necessary inputs to generate zkproofs. The worker continuously listens for such tasks and generate proofs accordingly.
+An AVS operator is expected to serve proving requests from Lagrange network by running a `Worker` binary. The Lagrange sequence sends through the `Gateway` tasks to workers containing all the necessary inputs to generate zkproofs. The worker continuously listens for such tasks and generates proofs accordingly.
 
 ![Worker](Lagrange.png)
 
@@ -13,7 +13,7 @@ If you prefer video content you can watch this [video tutorial](https://www.yout
 ### Pre-Requirements
 
 There are **3** different types of workers. Every type can generate a specific type of proof.
-You can choose your infrastrcture depending on the type of proof you would like to be able to generate.
+You can choose your infrastructure depending on the type of proof you would like to be able to generate.
 
 | Worker Type | Cores (Dedicated) | vCPU (Cloud) | Memory | Disk | Internet | Proposed Hetzner instance|
 | --- | --- | --- | --- | --- | --- | --- |
