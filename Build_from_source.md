@@ -10,9 +10,9 @@ cd lgn-coprocessor
 2. Checkout to the right version
 ```sh
 #For  testnet
-git checkout v0.2.1
+git checkout v0.3.0
 #For  mainnet
-git checkout v0.2.1
+git checkout v0.3.0
 ```
 3. Build the docker
 ```sh
