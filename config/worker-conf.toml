@@ -11,10 +11,6 @@ issuer = "lagrange"
 #This is a display name for your worker. please change it.
 worker_id = "generic-worker"
 
-[public_params]
-dir = "/zkmr_params"
-url = "https://distributed-query-public-params.s3.us-east-2.amazonaws.com"
-
 [public_params.preprocessing_params]
 file = "STORAGE_PREPROCESS/PUBLIC_PARAMS"
 
