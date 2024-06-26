@@ -67,7 +67,7 @@ docker compose up -d
 
 ### Observability
 #### Metrics
-The worker exposes the prometheus metrics by default on port 9000
+The worker exposes the prometheus metrics by default on port 9090
 #### Dashboard
 Starting from worker version `v0.2.1`, you can import this [grafana dashboard ](https://grafana.com/grafana/dashboards/21302-worker/)
 
