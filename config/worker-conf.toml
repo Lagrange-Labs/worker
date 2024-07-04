@@ -11,16 +11,5 @@ issuer = "lagrange"
 #This is a display name for your worker. please change it.
 worker_id = "generic-worker"
 
-[public_params.preprocessing_params]
-file = "STORAGE_PREPROCESS/PUBLIC_PARAMS"
-
-[public_params.query2_params]
-file = "STORAGE_QUERY2/public_params"
-
-[public_params.groth16_assets]
-circuit_file = "STORAGE_QUERY2/groth16_assets/circuit.bin"
-r1cs_file = "STORAGE_QUERY2/groth16_assets/r1cs.bin"
-pk_file = "STORAGE_QUERY2/groth16_assets/pk.bin"
-
 [prometheus]
 port = 9090
