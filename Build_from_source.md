@@ -10,7 +10,7 @@ cd lgn-coprocessor
 2. Checkout to the right version
 ```sh
 #For  testnet
-git checkout v1.1.0
+git checkout v1.1.2
 #For  mainnet
 git checkout v1.0.2
 ```
