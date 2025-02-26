@@ -23,7 +23,7 @@ services:
       - ./zkmr_params:/zkmr_params
     restart: always
     pull_policy: always
-    command: ["worker", "--config", "/config/worker-conf.toml"]
+    command: ["/bin/sh", "-c", "ulimit -s 400000000 && worker --json --config /config/worker-conf.toml"]
 #fetch new docker every minute
   watchtower:
     image: containrrr/watchtower
