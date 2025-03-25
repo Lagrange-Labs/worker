@@ -1,6 +1,6 @@
 [worker]
-data_dir = "/tmp"
 instance_type = "medium"
+version = "1.1.8"
 
 [avs]
 # for testnet, use:
@@ -14,7 +14,18 @@ worker_id = "CHANGE_THIS_TO_YOUR_OPERATOR_NAME"
 [public_params]
 
 params_root_url = "https://pub-d7c7f0d6979a41f2b25137eaecf12d7b.r2.dev"
-dir = "CHANGE_THIS_TO_DIRECTORY_TO_STORE_PARAMS"
+dir = "./zkmr_params"
+
+[public_params.groth16_assets]
+circuit_file = "groth16_assets/circuit.bin"
+pk_file = "groth16_assets/pk.bin"
+r1cs_file = "groth16_assets/r1cs.bin"
+
+[public_params.preprocessing_params]
+file = "preprocessing_params.bin"
+
+[public_params.query_params]
+file = "query_params.bin"
 
 [prometheus]
 port = 9090
