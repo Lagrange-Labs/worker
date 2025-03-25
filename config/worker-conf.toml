@@ -15,7 +15,5 @@ worker_id = "CHANGE_THIS_TO_YOUR_OPERATOR_NAME"
 
 params_root_url = "https://pub-d7c7f0d6979a41f2b25137eaecf12d7b.r2.dev"
 
-checksum_url = "/public_params.hash"
-
 [prometheus]
 port = 9090
