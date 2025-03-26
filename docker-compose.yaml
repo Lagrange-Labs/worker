@@ -1,21 +1,20 @@
 services:
   worker:
-    #image: lagrangelabs/worker:holesky
-    image: lagrangelabs/worker:${NETWORK}
+    image: lagrangelabs/worker:${VERSION}
     container_name: worker
     environment:
-    ###################################
-    #Setup variables###################
-    # You can find the list of the public RPCs for holesky here https://chainlist.org/chain/17000
-    - RPC_URL=https://eth.llamarpc.com
-    - AVS__ETH_PWD=${AVS__ETH_PWD}
-    - AVS__ETH_KEYSTORE=/config/priv_key.json
-    - NETWORK=${NETWORK}
-    ###################################
-    - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
-    - AVS__LAGR_PWD=${AVS__LAGR_PWD}
-    - RUST_LOG=info,worker=debug
-    - PUBLIC_PARAMS__SKIP_STORE=false
+      ###################################
+      #Setup variables###################
+      # You can find the list of the public RPCs for holesky here https://chainlist.org/chain/17000
+      - RPC_URL=https://eth.llamarpc.com
+      - AVS__ETH_PWD=${AVS__ETH_PWD}
+      - AVS__ETH_KEYSTORE=/config/priv_key.json
+      - NETWORK=${NETWORK}
+      ###################################
+      - AVS__LAGR_KEYSTORE=/config/lagr_keystore.json
+      - AVS__LAGR_PWD=${AVS__LAGR_PWD}
+      - RUST_LOG=info,worker=debug
+      - PUBLIC_PARAMS__SKIP_STORE=false
     ports:
       - "9090:9090"
     volumes:
@@ -23,11 +22,16 @@ services:
       - ./zkmr_params:/zkmr_params
     restart: always
     pull_policy: always
-    command: ["/bin/sh", "-c", "ulimit -s unlimited && worker --json --config /config/worker-conf.toml"]
-#fetch new docker every minute
+    command:
+      [
+        "/bin/sh",
+        "-c",
+        "ulimit -s unlimited && worker --json --config /config/worker-conf.toml",
+      ]
+  #fetch new docker every minute
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 60 lagrangelabs/worker:${NETWORK}
+    command: --interval 60 lagrangelabs/worker:${VERSION}

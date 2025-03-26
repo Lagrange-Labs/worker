@@ -4,9 +4,9 @@ version = "1.1.8"
 
 [avs]
 # for testnet, use:
-#gateway_url = "http://a2d5e507a3397433490d96c674eb51b7-b2a8d19e1bd1fd40.elb.us-east-2.amazonaws.com:10000"
+gateway_url = "http://a2d5e507a3397433490d96c674eb51b7-b2a8d19e1bd1fd40.elb.us-east-2.amazonaws.com:10000"
 # for mainnet, use:
-gateway_url = "ws://gateway.prod-distributed-query.prod.distributed-query.io:80"
+# gateway_url = "ws://gateway.prod-distributed-query.prod.distributed-query.io:80"
 issuer = "lagrange"
 #This is a display name for your worker. please change it.
 worker_id = "CHANGE_THIS_TO_YOUR_OPERATOR_NAME"
