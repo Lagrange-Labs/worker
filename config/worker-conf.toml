@@ -6,25 +6,16 @@ instance_type = "medium"
 gateway_url = "http://a2d5e507a3397433490d96c674eb51b7-b2a8d19e1bd1fd40.elb.us-east-2.amazonaws.com:10000"
 # for mainnet, use:
 # gateway_url = "https://gateway-grpc-mainnet-distributed-query.distributed-query.io"
+
+#This is the operator name. Please change it to your own operator name
 issuer = "lagrange"
 #This is a display name for your worker. please change it.
-worker_id = "CHANGE_THIS_TO_YOUR_OPERATOR_NAME"
+worker_id = "CHANGE_THIS_TO_YOUR_WORKER_NAME"
 
 [public_params]
 
 params_root_url = "https://pub-d7c7f0d6979a41f2b25137eaecf12d7b.r2.dev"
 dir = "./zkmr_params"
-
-[public_params.groth16_assets]
-circuit_file = "groth16_assets/circuit.bin"
-pk_file = "groth16_assets/pk.bin"
-r1cs_file = "groth16_assets/r1cs.bin"
-
-[public_params.preprocessing_params]
-file = "preprocessing_params.bin"
-
-[public_params.query_params]
-file = "query_params.bin"
 
 [prometheus]
 port = 9090
