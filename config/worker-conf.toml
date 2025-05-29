@@ -14,7 +14,7 @@ issuer = "lagrange"
 worker_id = "CHANGE_THIS_TO_YOUR_WORKER_NAME"
 
 [public_params]
-params_root_url = "https://pub-d7c7f0d6979a41f2b25137eaecf12d7b.r2.dev"
+params_root_url = "https://public-parameters.distributed-query.io"
 dir = "./zkmr_params"
 
 [prometheus]
