@@ -28,6 +28,7 @@ You can choose your infrastrcture depending on the type of proof you would like 
 ```sh
 git clone https://github.com/Lagrange-Labs/worker.git
 cd worker
+docker pull lagrangelabs/worker
 ```
 ---
 ##### **Note**: 
