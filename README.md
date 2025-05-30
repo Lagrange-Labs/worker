@@ -13,7 +13,7 @@ If you prefer video content you can watch this [video tutorial](https://www.yout
 ### Pre-Requirements
 
 There are **3** different types of workers. Every type can generate a specific type of proof.
-You can choose your infrastrcture depending on the type of proof you would like to be able to generate.
+You can choose your infrastructure depending on the type of proof you would like to be able to generate.
 
 | Worker Type | Cores (Dedicated) | vCPU (Cloud) | Memory | Disk | Internet | Proposed Hetzner instance|
 | --- | --- | --- | --- | --- | --- | --- |
