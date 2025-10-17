@@ -6,7 +6,7 @@ instance_type = "medium"
 # for testnet, use:
 gateway_url = "https://gateway-grpc-testnet-distributed-query-hetzner.testnet.prod.platform.distributed-query.io"
 # for mainnet, use:
-# gateway_url = "http://a271e1220fa8d4c62aedb5f0e59c6fe3-61018af36abe1235.elb.us-east-2.amazonaws.com:10000"
+# gateway_url = "https://gateway-grpc-mainnet-distributed-query-hetzner.mainnet.prod.platform.distributed-query.io"
 
 #This is the operator name. Please change it to your own operator name
 issuer = "lagrange"
