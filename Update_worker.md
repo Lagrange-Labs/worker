@@ -21,7 +21,7 @@ The newly built docker with the tag `lgn-coprocessor:local` should override your
 **Update by pulling from dockerhub**
 
 ```sh
-docker pull lagrangelabs/worker:v1.1.8
+docker pull lagrangelabs/worker:v2.0.1
 ```
 
 ---
